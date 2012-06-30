@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photoline</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="css/main.css">
+	
+	<script charset="utf-8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+	<script charset="utf-8">
+	//<![CDATA[
+		$(document).ready(function(){
+			$('#photoline a').bind('click', function(){
+				// Update the big picture
+				$(this).children().each(function(){
+					// Update the big picture
+					var pictureMiniName = $(this).attr('src');
+					$('#screenshot img').attr('src', pictureMiniName.substr(0, pictureMiniName.lastIndexOf('.'))+'.jpg');
+					
+					// Update title and description of the picture according to the properties of the miniature
+					$('#screenshot h1').text($(this).attr('alt'));
+					$('#screenshot p').text($(this).attr('longdesc'));
+				});
+				
+				// Update the selected miniature
+				$('#photoline li').removeAttr('class');
+				$(this).parents('li').attr('class', 'selected');
+
+				// Block the link to prevent the browser to load the specified page
+				return false;
+			});
+		});
+	//]]>
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<figure id="screenshot">
+				<img alt="" src="pic/mynameisharsha.jpg" />
+				<figcaption>
+					<h1>Red Flower</h1>
+					<p>That's the only thing I was able to think of for the title. But, its a pretty flower!</p>
+				</figcaption>
+			</figure>
+		</div>
+		<footer>
+			<ul id="photoline">
+				<li class="selected">
+					<div class="miniature-frame">
+						<span class="corner"></span><span class="corner"></span>
+						<a href="index.html"><img alt="Red Flower" longdesc="That's the only thing I was able to think of for the title. But, its a pretty flower!" src="pic/mynameisharsha.png"/></a>
+					</div>
+				</li><li>
+					<div class="miniature-frame">
+						<span class="corner"></span><span class="corner"></span>
+						<a href="martinlabar.html"><img alt="Bougainvillea flower with magenta bracts, cropped" longdesc="A bougainvillea flower, pink and white. The modified leaves, or bracts, that are so prominent on this plant (and that many people think are flowers) are in the background. That's a flower bud on the left, with another one up higher. The flower is about as big around as a ball point pen or a pencil." src="pic/martinlabar.png"/></a>
+					</div>
+				</li><li>
+					<div class="miniature-frame">
+						<span class="corner"></span><span class="corner"></span>
+						<a href="doug88888.html"><img alt="Macro flower experiment" longdesc="This macro involves holding a 50mm fixed lens backwards infront of a zoom lens (105mm in this case) to get a super zoom. Quite fun - very tricky to get in focus properly." src="pic/doug88888.png"/></a>
+					</div>
+				</li><li>
+					<div class="miniature-frame">
+						<span class="corner"></span><span class="corner"></span>
+						<a href="shannonlite.html"><img alt="Pretty Red Flower" longdesc="I don't know what kind of flower this is. If anyone does, please let me know! It was found growing all by itself in the shade by a lake!" src="pic/shannonlite.png"/></a>
+					</div>
+				</li>
+			</ul>
+			<ul id="license">
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/2.0/80x15.png" /></a><a href="http://www.flickr.com/photos/martinlabar/6809310642/" title="See the picture on Flickr">Bougainvillea flower with magenta bracts, cropped</a>. By <a href="http://www.flickr.com/photos/martinlabar/" title="See artist's gallery on Flickr">Martin Labar</a>.</li>
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/2.0/80x15.png" /></a><a href="http://www.flickr.com/photos/doug88888/3757385629/" title="See the picture on Flickr">Macro flower experiment</a>. By <a href="http://www.flickr.com/photos/doug88888/" title="See artist's gallery on Flickr">@Doug88888</a>.</li>
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a><a href="http://www.flickr.com/photos/shannonlite/3823285312/" title="See the picture on Flickr">Pretty Red Flower</a>. By <a href="http://www.flickr.com/photos/shannonlite/" title="See artist's gallery on Flickr">JacquiTnature</a>.</li>
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a><a href="http://www.flickr.com/photos/mynameisharsha/4815214830/" title="See the picture on Flickr">Red Flower</a>. By <a href="http://www.flickr.com/photos/mynameisharsha/" title="See artist's gallery on Flickr">mynameisharsha</a>.</li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>
